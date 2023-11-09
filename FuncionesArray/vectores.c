@@ -13,7 +13,7 @@ void pedirVector(int tam, int vector[]) {
 	for(i=0;i<tam;i++) {
 		printf("Introduce el elemento %d: ",i+1);
 		fflush(stdout);
-		scanf("%d",&vector);
+		scanf("%d",&vector[i]);
 	}
 }
 
@@ -25,20 +25,34 @@ void mostrarVector(int tam, int vector[]) {
 	}
 }
 
-void mostrarVectorCorchete(int tam, int vector[]){
+void mostrarVectorCorchete(int tam, int vector[]) {
 	int i;
 	printf("[");
 	for(i=0;i<tam;i++) {
-		printf("%d",vector[1]);
+		if (i==tam-1) {
+			printf("%d] ", vector[i]);
+		} else {
+			printf("%d, ", vector[i]);
+		}
 	}
-	printf("]");
+
 }
 
-int posicionPrimerElemento(int tam, int vector[], int buscar){
-	int pos=-1,i;
-	for(i=0;i<tam && pos<0;i++);
-		if(vector[i]==buscar){
-			pos=1;
+int posicionPrimerElemento(int tam, int vector[], int buscar) {
+	int i;
+	for(i=0;i<tam;i++) {
+		if (vector[i]==buscar) {
+			return i;
 		}
-		return pos;
+	}
+	return -1;
+}
+
+void mostrarMenoresQue(int tam, int vector[], int num) {
+	int i;
+	for(i=0;i<tam;i++){
+		if(vector[i]<num){
+			printf("%d ",vector[i]);
+		}
+	}
 }

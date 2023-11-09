@@ -29,4 +29,9 @@
 	 */
 	int posicionPrimerElemento(int tam, int vector[], int buscar);
 
+	/**
+	 * Mostrar elementos menores que el número dado por pantalla
+	 */
+	void mostrarMenoresQue(int tam, int vector[], int num);
+
 #endif /* VECTORES_H_ */
